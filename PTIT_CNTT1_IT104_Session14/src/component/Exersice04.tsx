@@ -1,4 +1,5 @@
 import { Component } from "react";
+
 type State = {
   slogan: string;
 };
@@ -16,6 +17,10 @@ class Exersice04 extends Component<object, State> {
       slogan: "Học code sẽ thành công. Cố lên!!!",
     });
   };
+
+  shouldComponentUpdate(_: object, nextState: State) {
+    return this.state.slogan !== nextState.slogan;
+  }
 
   render() {
     return (
